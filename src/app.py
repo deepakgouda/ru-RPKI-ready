@@ -60,7 +60,7 @@ class IPLookupService:
     def load_data(self):
         """Load the data file."""
         path_pfx2org = os.path.join(
-            os.getcwd(), "data", f"prefix_tags_sample_{self.curr_date}_v4.parquet"
+            os.getcwd(), "data", f"prefix_tags_{self.curr_date}_v4.parquet"
         )
         print(f"Loading data from {path_pfx2org}")
         self.df_pfx2org = pd.read_parquet(path_pfx2org)

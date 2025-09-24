@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# virtual environments and sandboxes
+.venv/
+sandbox/*.ipynb
+
 # Distribution / packaging
 .Python
 build/

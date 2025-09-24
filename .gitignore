@@ -8,7 +8,7 @@ __pycache__/
 
 # virtual environments and sandboxes
 .venv/
-sandbox/
+sandbox/*.ipynb
 
 # Distribution / packaging
 .Python

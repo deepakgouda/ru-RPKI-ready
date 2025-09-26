@@ -60,21 +60,21 @@ class IPLookupService:
     def load_data(self):
         """Load the data file."""
         path_pfx2org_v4 = os.path.join(
-            os.getcwd(), "data", f"prefix_tags_{self.curr_date}_v4.parquet"
+            os.getcwd(), "data", f"prefix_tags_sample_{self.curr_date}_v4.parquet"
         )
         print(f"Loading data from {path_pfx2org_v4}")
         self.df_v4 = pd.read_parquet(path_pfx2org_v4)
         self.df_v4["af"] = 4
 
         path_pfx2org_v6 = os.path.join(
-            os.getcwd(), "data", f"prefix_tags_{self.curr_date}_v6.parquet"
+            os.getcwd(), "data", f"prefix_tags_sample_{self.curr_date}_v6.parquet"
         )
         print(f"Loading IPv6 data from {path_pfx2org_v6}")
         self.df_v6 = pd.read_parquet(path_pfx2org_v6)
         self.df_v6["af"] = 6
 
         self.df_pfx2org = pd.concat([self.df_v4, self.df_v6], ignore_index=True)
-        
+
         self.df_pfx2org["origin_asn"] = "AS" + self.df_pfx2org["origin_asn"].astype(str)
         self.df_pfx2org["asn_cluster"] = "AS" + self.df_pfx2org["asn_cluster"].astype(str)
 
